@@ -3,7 +3,7 @@
 from argparse import ArgumentParser, FileType
 from configparser import ConfigParser
 from confluent_kafka import Consumer, OFFSET_BEGINNING
-import mariadb
+# import mariadb
 
 if __name__ == '__main__':
     # Parse the command line.
@@ -36,14 +36,14 @@ if __name__ == '__main__':
     # Poll for new messages from Kafka and print them.
     try:
         # db connection
-        conn = mariadb.connect(
-            user="root",
-            password="qwer",
-            host="localhost",
-            port=3306,
-            database="smart"
-        )
-        cursor = conn.cursor()
+        # conn = mariadb.connect(
+        #     user="root",
+        #     password="qwer",
+        #     host="localhost",
+        #     port=3306,
+        #     database="smart"
+        # )
+        # cursor = conn.cursor()
         while True:
             msg = consumer.poll(1.0)
             if msg is None:
@@ -65,8 +65,8 @@ if __name__ == '__main__':
                 #     print(f"Error: {e}")
     except KeyboardInterrupt:
         pass
-    except mariadb.Error as mydberr:
-        print(f"Error connecting to MariaDB Platform: {mydberr}")
+    # except mariadb.Error as mydberr:
+    #     print(f"Error connecting to MariaDB Platform: {mydberr}")
     finally:
         # Leave group and commit final offsets
         consumer.close()
