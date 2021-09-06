@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+misc.xml
+modules.xml
+profiles_settins.xml
+vcs.xml
+test-kafka.iml

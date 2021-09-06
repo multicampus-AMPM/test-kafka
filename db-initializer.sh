@@ -1,0 +1,2 @@
+mysql -u root -h 127.0.0.1 -e "create database smart" -pqwer
+mysql -u root -h 127.0.0.1 -e "CREATE TABLE smart.raw(seq INT NOT NULL AUTO_INCREMENT, dt VARCHAR(50) NOT NULL, serial VARCHAR(100) NOT NULL, capacity INT, PRIMARY KEY (seq))" -pqwer
