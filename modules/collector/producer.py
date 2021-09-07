@@ -42,7 +42,7 @@ if __name__ == '__main__':
         serial_number = choice(serial_numbers)
         capacity_byte = choice(capacity_bytes)
         # TODO: check the form of the data
-        producer.produce(topic, capacity_byte, serial_number, callback=delivery_callback)
+        producer.produce(topic, str(capacity_byte), serial_number, callback=delivery_callback)
         count += 1
 
     # Block until the messages are sent.
